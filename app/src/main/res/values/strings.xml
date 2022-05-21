@@ -2,4 +2,8 @@
     <string name="app_name">Symphony</string>
     <string name="at_may_kr_contain_space">5월의&#160;</string>
     <string name="symphony_kr_contain_space">&#160;교향곡</string>
+    <string name="intro_kr">악보 위의 하루</string>
+    <string name="symphony_kr">심포니</string>
+    <string name="write_name_kr">작곡가의 이름을 적어주세요</string>
+    <string name="complete_kr">음표 그리기</string>
 </resources>
