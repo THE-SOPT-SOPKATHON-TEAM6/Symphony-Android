@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Symphony</string>
+    <string name="write_name_kr">이름을 입력해주세요</string>
+    <string name="complete_kr">완료</string>
 </resources>
