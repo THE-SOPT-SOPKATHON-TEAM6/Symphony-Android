@@ -1,7 +1,8 @@
-package org.sopt.symphony
+package org.sopt.symphony.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import org.sopt.symphony.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
