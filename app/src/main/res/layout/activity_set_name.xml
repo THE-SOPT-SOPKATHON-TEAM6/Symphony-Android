@@ -36,11 +36,12 @@
         <EditText
             android:id="@+id/et_name"
             style="@style/head"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_marginTop="371dp"
             android:background="@drawable/rectangle_fill_grey_line_radius_8"
             android:hint="@string/write_name_kr"
+            android:layout_marginHorizontal="40dp"
             android:paddingStart="14dp"
             android:textColor="@color/white"
             android:textColorHint="@color/text_inactive"

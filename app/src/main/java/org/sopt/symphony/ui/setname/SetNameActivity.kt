@@ -16,7 +16,11 @@ class SetNameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySetNameBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setEditTextChangeListener()
+        btnNameFinish()
+    }
 
+    private fun setEditTextChangeListener() {
         binding.etName.addTextChangedListener {
             if (binding.etName.text.isEmpty()) {
                 binding.btnNameFinish.setBackgroundResource(R.drawable.rectangle_fill_gray_radius_11)
@@ -26,7 +30,9 @@ class SetNameActivity : AppCompatActivity() {
                 binding.btnNameFinish.setTextColor(this.getColor(R.color.white))
             }
         }
+    }
 
+    private fun btnNameFinish() {
         binding.btnNameFinish.setOnClickListener {
             if (binding.etName.text.isNullOrBlank()) {
                 Toast.makeText(this, "이름이 입력되지 않았습니다", Toast.LENGTH_SHORT).show()
