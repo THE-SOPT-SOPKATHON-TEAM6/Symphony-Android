@@ -20,7 +20,7 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="56dp"
             android:textColor="@color/white"
-            android:text="2022년 5월 21일"
+            android:text="@string/today_date_kr"
             android:textAppearance="@style/head_sub"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +37,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_date"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="하루를 음계로 표현하자면,"/>
+            android:text="@string/today_note_kr"/>
 
         <RadioGroup
             android:id="@+id/radio_group_note"
@@ -54,6 +54,7 @@
                 android:id="@+id/radio_do"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="false"
                 android:text="" />
@@ -62,6 +63,7 @@
                 android:id="@+id/radio_mi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="false"
                 android:text="" />
@@ -70,6 +72,7 @@
                 android:id="@+id/radio_sol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="false"
                 android:text="" />
@@ -78,6 +81,7 @@
                 android:id="@+id/radio_si"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="false"
                 android:text="" />
@@ -86,6 +90,7 @@
                 android:id="@+id/radio_rae"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@null"
                 android:checked="false"
                 android:text="" />
@@ -174,7 +179,7 @@
             android:layout_marginTop="38dp"
             android:textColor="@color/pink"
             android:textAppearance="@style/head"
-            android:text="오늘의 감정을 가사로 적어보세요."
+            android:text="@string/today_content_kr"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_note_text" />
@@ -210,7 +215,7 @@
             android:id="@+id/btn_done"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:text="음표 그리기"
+            android:text="@string/draw_note_kr"
             android:textColor="@color/white"
             android:textAppearance="@style/head"
             android:layout_marginTop="30dp"
