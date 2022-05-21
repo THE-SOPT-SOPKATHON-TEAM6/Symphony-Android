@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
+        android:background="@color/background"
         tools:context=".ui.setname.SetNameActivity">
 
         <TextView
@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="76dp"
             android:text="@string/intro_kr"
-            android:textColor="#FF84FA"
+            android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
             android:layout_marginTop="289dp"
             android:letterSpacing="0.53"
             android:text="@string/symphony_kr"
-            android:textColor="#FF84FA"
+            android:textColor="@color/pink"
             android:textSize="45dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,18 +48,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_name_finish"
-            style="@style/head"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="28dp"
-            android:background="@drawable/rectangle_fill_purple_radius_11"
-            android:text="@string/complete_kr"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/rectangle_fill_grey_line_radius_8"
+            android:text="@string/draw_note_kr"
+            android:textAppearance="@style/head"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
