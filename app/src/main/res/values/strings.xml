@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Symphony</string>
     <string name="at_may_kr_contain_space">5월의&#160;</string>
-    <string name="intro_kr">악보 위의 하루</string>
+    <string name="intro_kr">감정을 악보에 담다</string>
     <string name="symphony_kr">심포니</string>
     <string name="symphony_kr_contain_space">&#160;심포니</string>
     <string name="write_name_kr">작곡가의 이름을 적어주세요</string>
@@ -13,4 +13,10 @@
     <string name="return_to_score_kr">악보로 돌아가기</string>
     <string name="show_complete_score_kr">완성된 악보 보기</string>
     <string name="score_complete_kr">악보가 완성되었어요!</string>
+    <string name="score_doe_kr">도</string>
+    <string name="score_mi_kr">미</string>
+    <string name="score_sol_kr">솔</string>
+    <string name="score_si_kr">시</string>
+    <string name="score_rae_kr">레</string>
+    <string name="date_formant_kr">yyyy년 MM월 dd일</string>
 </resources>
