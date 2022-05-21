@@ -6,4 +6,5 @@
     <string name="symphony_kr">심포니</string>
     <string name="write_name_kr">작곡가의 이름을 적어주세요</string>
     <string name="complete_kr">음표 그리기</string>
+    <string name="draw_note_kr">음표 그리기</string>
 </resources>

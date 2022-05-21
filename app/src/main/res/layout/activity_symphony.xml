@@ -65,7 +65,12 @@
             android:id="@+id/btn_draw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="음표 그리기 버튼"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/rectangle_fill_purple_radius_11"
+            android:text="@string/draw_note_kr"
+            android:textAppearance="@style/head"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
