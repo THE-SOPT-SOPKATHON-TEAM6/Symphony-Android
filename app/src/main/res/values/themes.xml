@@ -10,11 +10,11 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!--        <item name="android:windowLightStatusBar" >true</item>-->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
         <!-- Customize your theme here. -->
-        <!--        <item name="android:includeFontPadding">false</item>-->
-        <!--        <item name="fontFamily">@font/noto_sans_kr</item>-->
+        <item name="android:includeFontPadding">false</item>
+        <!-- <item name="fontFamily">@font/noto_sans_kr</item>-->
     </style>
 
     <style name="head_main">
@@ -47,10 +47,10 @@
     </style>
 
     <!--    <style name="PurpleEditTextStyle" parent="Theme.AppCompat.Light.NoActionBar">-->
-<!--        <item name="colorControlActivated">@color/purple_main</item>-->
-<!--        <item name="colorControlNormal">@color/purple_main</item>-->
-<!--        <item name="colorControlHighlight">@color/purple_main</item>-->
-<!--        <item name="colorAccent">@color/purple_main</item>-->
-<!--        <item name="android:textCursorDrawable">@drawable/rectangle_cursor_purple</item>-->
-<!--    </style>-->
+    <!--        <item name="colorControlActivated">@color/purple_main</item>-->
+    <!--        <item name="colorControlNormal">@color/purple_main</item>-->
+    <!--        <item name="colorControlHighlight">@color/purple_main</item>-->
+    <!--        <item name="colorAccent">@color/purple_main</item>-->
+    <!--        <item name="android:textCursorDrawable">@drawable/rectangle_cursor_purple</item>-->
+    <!--    </style>-->
 </resources>
