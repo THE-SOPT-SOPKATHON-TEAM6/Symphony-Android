@@ -157,9 +157,9 @@ private fun setEditTextChangeListener() {
 * [x] 제목 이름 SetNameActivity로부터 받아옴
 * [x] 음표 그리기 버튼 클릭 시 PostNoteActivity로 이동
 * [x] 각 음표 클릭 시 과거 일기 확인 가능(Dialog)
-* [x] 음표 21개 다 채워지면 악보 완성
+* [x] 일기 작성 시 dialog로 
 
-### 2.1. SetNameActivity의 이름 입력값 받아오기
+## 2.1. SetNameActivity의 이름 입력값 받아오기
 ```kotlin 
 private fun initDrawNoteBtnClick() {
     binding.btnDraw.setOnClickListener {
