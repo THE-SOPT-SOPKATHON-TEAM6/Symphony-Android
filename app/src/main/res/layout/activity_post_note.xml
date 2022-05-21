@@ -46,8 +46,8 @@
             android:layout_height="56dp"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="32dp"
-            android:gravity="center"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/layout_note_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_today_note">
@@ -56,46 +56,60 @@
                 android:id="@+id/radio_do"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_1"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_mi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_2"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_sol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_3"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_si"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_4"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_rae"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_5"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
         </RadioGroup>
 
@@ -186,24 +200,24 @@
             app:layout_constraintTop_toBottomOf="@id/layout_note_text" />
 
 
-            <EditText
-                android:id="@+id/etv_content"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:padding="20dp"
-                android:gravity="top"
-                android:layout_marginTop="17dp"
-                android:layout_marginHorizontal="20dp"
-                android:textAppearance="@style/body"
-                android:textColor="@color/white"
-                android:theme="@style/WhiteEditTextStyle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:background="@drawable/rectangle_radius_16"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_today_content"
-                app:layout_constraintBottom_toTopOf="@id/btn_done"
-                app:layout_constraintVertical_bias="1.0" />
+        <EditText
+            android:id="@+id/etv_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="20dp"
+            android:gravity="top"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="20dp"
+            android:textAppearance="@style/body"
+            android:textColor="@color/white"
+            android:theme="@style/WhiteEditTextStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/rectangle_radius_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_today_content"
+            app:layout_constraintBottom_toTopOf="@id/btn_done"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_done"
