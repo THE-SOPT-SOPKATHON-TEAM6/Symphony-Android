@@ -15,7 +15,7 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        setUserName()
+        setUserName()
         initRvAdapter()
         setRvItem()
         initDrawNoteBtnClick()

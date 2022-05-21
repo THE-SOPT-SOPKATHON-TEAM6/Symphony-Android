@@ -44,7 +44,7 @@
     </style>
 
     <style name="body">
-        <item name="android:fontFamily">@font/nanum_barun_gothic</item>
+        <item name="android:fontFamily">@font/nanum_barun_gothic_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">10sp</item>
