@@ -1,16 +1,12 @@
 package org.sopt.symphony.ui.postnote
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.RadioGroup
-import android.widget.Toast
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.symphony.R
-import org.sopt.symphony.data.RetrofitBuilder
 import org.sopt.symphony.data.request.PostNoteRequest
-import org.sopt.symphony.data.response.PostNoteResponse
 import org.sopt.symphony.databinding.ActivityPostNoteBinding
-import retrofit2.Call
+import org.sopt.symphony.util.DialogScoreComplete
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -37,43 +33,55 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
     // 체크된 음표 가져오기
     private fun getCheckedNote() {
         binding.radioGroupNote.setOnCheckedChangeListener(object :
-            RadioGroup.OnCheckedChangeListener {
-            override fun onCheckedChanged(radioGroup: RadioGroup?, checkedId: Int) {
-                when (checkedId) {
-                    R.id.radio_do -> {
-                        checkedNote = "도"
-                    }
-                    R.id.radio_mi -> {
-                        checkedNote = "미"
-                    }
-                    R.id.radio_sol -> {
-                        checkedNote = "솔"
-                    }
-                    R.id.radio_si -> {
-                        checkedNote = "시"
-                    }
-                    R.id.radio_rae -> {
-                        checkedNote = "레"
-                    }
-                    else -> {
-                        checkedNote = "도"
+                RadioGroup.OnCheckedChangeListener {
+                override fun onCheckedChanged(radioGroup: RadioGroup?, checkedId: Int) {
+                    when (checkedId) {
+                        R.id.radio_do -> {
+                            checkedNote = "도"
+                        }
+                        R.id.radio_mi -> {
+                            checkedNote = "미"
+                        }
+                        R.id.radio_sol -> {
+                            checkedNote = "솔"
+                        }
+                        R.id.radio_si -> {
+                            checkedNote = "시"
+                        }
+                        R.id.radio_rae -> {
+                            checkedNote = "레"
+                        }
+                        else -> {
+                            checkedNote = "도"
+                        }
                     }
                 }
-            }
-
-        })
+            })
     }
 
-    private fun initBtnEvent(){
+    private fun initBtnEvent() {
         binding.btnDone.setOnClickListener {
             // 서버 통신 시도
             // tryPostNote()
-            finish()
+            showDialog()
         }
     }
 
+    private fun showDialog() {
+        val dialog = DialogScoreComplete(::doAfterConfirm)
+        dialog.show(supportFragmentManager, this.javaClass.name)
+    }
+
+    private fun doAfterConfirm() {
+        finish()
+    }
+
     private fun tryPostNote() {
-        val postNoteRequest= PostNoteRequest(checkedNote,binding.etvContent.text.toString(),binding.tvDate.text.toString())
+        val postNoteRequest = PostNoteRequest(
+            checkedNote,
+            binding.etvContent.text.toString(),
+            binding.tvDate.text.toString()
+        )
         // val call: Call<PostNoteResponse> = RetrofitBuilder.getInstance().posttarget(postNoteRequest)
 
         /*call.enqueue(object : Callback<PostNoteResponse> {
@@ -84,6 +92,11 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
                 if (response.isSuccessful) {
                     val data = response.body()?.data
                     Log.d(TAG, "onResponse_success: $data")
+
+                    // for 지연언니~!!
+                    if (id 값이 LAST_NOTE 이면) showDialog()
+                    else finish()
+
                 } else{
                     Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
                 }
@@ -93,5 +106,9 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
                 Log.d(TAG, "onFailure: $t")
             }
         })*/
+    }
+
+    companion object {
+        const val LAST_NOTE = 21
     }
 }
