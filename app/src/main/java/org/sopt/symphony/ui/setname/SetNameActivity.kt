@@ -1,6 +1,5 @@
 package org.sopt.symphony.ui.setname
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -18,11 +17,11 @@ class SetNameActivity : AppCompatActivity() {
 
         binding.btnNameFinish.setOnClickListener {
             if (binding.etName.text.isNullOrBlank()) {
-                Toast.makeText(this,"이름이 입력되지 않았습니다", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "이름이 입력되지 않았습니다", Toast.LENGTH_SHORT).show()
             } else {
                 val intent = Intent(this@SetNameActivity, SymphonyActivity::class.java)
                 intent.putExtra("name", binding.etName.text.toString())
-                setResult(Activity.RESULT_OK, intent)
+                startActivity(intent)
                 finish()
             }
         }

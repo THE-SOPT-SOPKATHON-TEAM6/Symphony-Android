@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -24,7 +25,8 @@
             android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2022년 05월 21일" />
 
 
         <ImageView
@@ -44,8 +46,10 @@
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="30dp"
             android:text="@{noteData.content}"
+            android:textAppearance="@style/body"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/iv_star" />
+            app:layout_constraintTop_toBottomOf="@id/iv_star"
+            tools:text="오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다" />
 
 
         <androidx.appcompat.widget.AppCompatButton

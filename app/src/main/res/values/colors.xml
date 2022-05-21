@@ -10,6 +10,10 @@
     <color name="purple">#8b5ce8</color>
     <color name="white">#ffffff</color>
     <color name="ddd">#4d4d4d</color>
-    <color name="pink">#ff77fa</color>
     <color name="border_gray">#424242</color>
+    <color name="grey_line">#4d4d4d</color>
+    <color name="pink">#fa64be</color>
+    <color name="background_sub">#272727</color>
+    <color name="btn_inactive">#343434</color>
+    <color name="text_inactive">#40ffffff</color>
 </resources>
