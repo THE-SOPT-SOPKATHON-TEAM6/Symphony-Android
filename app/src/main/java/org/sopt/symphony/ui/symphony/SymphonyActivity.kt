@@ -23,10 +23,14 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        getSymphonyData()
         setUserName()
         initRvAdapter()
         initDrawNoteBtnClick()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        getSymphonyData()
     }
 
     private fun getSymphonyData() {
