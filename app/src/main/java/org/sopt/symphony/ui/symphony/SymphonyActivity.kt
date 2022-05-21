@@ -43,6 +43,7 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
                 if (response.isSuccessful) {
                     val data = response.body()?.data
                     dummyList = data?.toMutableList() ?: throw IllegalStateException()
+                    Log.d(TAG, "onResponse: $dummyList")
                     val tmp = refactorList(dummyList)
                     symphonyAdapter.submitList(tmp)
                 } else Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
