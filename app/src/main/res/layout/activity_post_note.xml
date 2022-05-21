@@ -55,40 +55,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:checked="true"
-                android:text="Your Text" />
+                android:checked="false"
+                android:text="" />
 
             <RadioButton
                 android:id="@+id/radio_mi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:checked="true"
-                android:text="Your Text" />
+                android:checked="false"
+                android:text="" />
 
             <RadioButton
                 android:id="@+id/radio_sol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:checked="true"
-                android:text="Your Text" />
+                android:checked="false"
+                android:text="" />
 
             <RadioButton
                 android:id="@+id/radio_si"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:checked="true"
-                android:text="Your Text" />
+                android:checked="false"
+                android:text="" />
 
             <RadioButton
                 android:id="@+id/radio_rae"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:checked="true"
-                android:text="Your Text" />
+                android:checked="false"
+                android:text="" />
 
         </RadioGroup>
 
