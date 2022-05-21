@@ -45,13 +45,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="30dp"
+            android:lineHeight="24sp"
             android:text="@{noteData.content}"
             android:textAppearance="@style/body"
-            android:lineHeight="24sp"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/iv_star"
             tools:text="오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_confirm"
@@ -60,7 +59,7 @@
             android:layout_marginHorizontal="58dp"
             android:layout_marginVertical="26dp"
             android:background="@drawable/rectangle_fill_purple_radius_11"
-            android:text="확인"
+            android:text="@string/return_to_score_kr"
             android:textAppearance="@style/BtnModal"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"

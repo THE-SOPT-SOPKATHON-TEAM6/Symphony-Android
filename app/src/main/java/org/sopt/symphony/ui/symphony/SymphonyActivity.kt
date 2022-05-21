@@ -8,7 +8,7 @@ import org.sopt.symphony.data.model.SymphonyNoteData
 import org.sopt.symphony.databinding.ActivitySymphonyBinding
 import org.sopt.symphony.ui.postnote.PostNoteActivity
 import org.sopt.symphony.ui.symphony.adapter.SymphonyAdapter
-import org.sopt.symphony.util.DialogUtil
+import org.sopt.symphony.util.DialogNoteDetail
 
 class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity_symphony) {
     private lateinit var symphonyAdapter: SymphonyAdapter
@@ -31,7 +31,7 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
     }
 
     private fun onNoteClick(symphonyNoteData: SymphonyNoteData) {
-        val dialog = DialogUtil(DialogUtil.SHOW_NOTE, symphonyNoteData)
+        val dialog = DialogNoteDetail(symphonyNoteData)
         dialog.show(supportFragmentManager, this.javaClass.name)
     }
 

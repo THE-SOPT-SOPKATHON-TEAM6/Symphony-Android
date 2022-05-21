@@ -1,9 +1,7 @@
 package org.sopt.symphony.util
 
 import android.app.Dialog
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +10,7 @@ import org.sopt.symphony.R
 import org.sopt.symphony.data.model.SymphonyNoteData
 import org.sopt.symphony.databinding.DialogNoteDetailBinding
 
-class DialogUtil(private val dialogMode: Int, private val note: SymphonyNoteData) :
+class DialogNoteDetail(private val note: SymphonyNoteData?) :
     DialogFragment() {
     private var _binding: DialogNoteDetailBinding? = null
     val binding get() = _binding!!
@@ -31,20 +29,13 @@ class DialogUtil(private val dialogMode: Int, private val note: SymphonyNoteData
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        Log.d(TAG, "onViewCreated: dialog")
         setLayout(view)
-        setVisibilityDependOnDialog()
+        setData()
         clickConfirmListener()
     }
 
-    private fun setVisibilityDependOnDialog() {
-        when (dialogMode) {
-            SHOW_NOTE -> {
-                binding.noteData = note // set data
-            }
-            COMPLETE_POST -> Log.d(TAG, "setVisibilityDependOnDialog: COMPLETE_POST")
-        }
+    private fun setData() {
+        binding.noteData = note
     }
 
     private fun setLayout(view: View) {
@@ -58,10 +49,5 @@ class DialogUtil(private val dialogMode: Int, private val note: SymphonyNoteData
 
     private fun clickConfirmListener() {
         binding.btnConfirm.setOnClickListener { dismiss() }
-    }
-
-    companion object {
-        const val SHOW_NOTE = 0
-        const val COMPLETE_POST = 1
     }
 }
