@@ -1,11 +1,16 @@
 package org.sopt.symphony.ui.postnote
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioGroup
 import android.widget.Toast
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.symphony.R
+import org.sopt.symphony.data.RetrofitBuilder
+import org.sopt.symphony.data.request.PostNoteRequest
+import org.sopt.symphony.data.response.PostNoteResponse
 import org.sopt.symphony.databinding.ActivityPostNoteBinding
+import retrofit2.Call
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -61,9 +66,32 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
 
     private fun initBtnEvent(){
         binding.btnDone.setOnClickListener {
-
+            // 서버 통신 시도
+            // tryPostNote()
+            finish()
         }
     }
 
+    private fun tryPostNote() {
+        val postNoteRequest= PostNoteRequest(checkedNote,binding.etvContent.text.toString(),binding.tvDate.text.toString())
+        // val call: Call<PostNoteResponse> = RetrofitBuilder.getInstance().posttarget(postNoteRequest)
 
+        /*call.enqueue(object : Callback<PostNoteResponse> {
+            override fun onResponse(
+                call: Call<targetResponse>,
+                response: Response<targetResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    Log.d(TAG, "onResponse_success: $data")
+                } else{
+                    Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
+                }
+            }
+
+            override fun onFailure(call: Call<targetResponse>, t: Throwable) {
+                Log.d(TAG, "onFailure: $t")
+            }
+        })*/
+    }
 }
