@@ -15,6 +15,6 @@ interface SymphonyService {
     // 글쓰기 post
     @POST("/board")
     fun postBoard(
-        @Body body:PostNoteRequest
+        @Body body: PostNoteRequest
     ): Call<PostNoteResponse>
 }

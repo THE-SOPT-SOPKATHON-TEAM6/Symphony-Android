@@ -17,6 +17,10 @@
         <!-- <item name="fontFamily">@font/noto_sans_kr</item>-->
     </style>
 
+    <style name="DisableDialogBackground" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
     <style name="head_main">
         <item name="android:fontFamily">@font/jalnan_regular</item>
         <item name="android:textStyle">normal</item>
@@ -40,10 +44,17 @@
     </style>
 
     <style name="body">
-        <item name="android:fontFamily">@font/nanum_barun_gothic</item>
+        <item name="android:fontFamily">@font/nanum_barun_gothic_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">10sp</item>
+    </style>
+
+    <style name="BtnModal">
+        <item name="android:fontFamily">@font/jalnan_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
     </style>
 
     <!--    <style name="PurpleEditTextStyle" parent="Theme.AppCompat.Light.NoActionBar">-->

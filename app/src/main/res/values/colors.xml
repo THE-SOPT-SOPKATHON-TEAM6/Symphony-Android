@@ -9,6 +9,8 @@
     <color name="background">#1a1a1a</color>
     <color name="purple">#8b5ce8</color>
     <color name="white">#ffffff</color>
+    <color name="ddd">#4d4d4d</color>
+    <color name="border_gray">#424242</color>
     <color name="grey_line">#4d4d4d</color>
     <color name="pink">#fa64be</color>
     <color name="background_sub">#272727</color>

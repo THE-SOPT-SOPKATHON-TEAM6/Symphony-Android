@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="noteData"
+            type="org.sopt.symphony.data.model.SymphonyNoteData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_fill_stroke_background_radius_16">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@{noteData.createdAt}"
+            android:textAppearance="@style/head"
+            android:textColor="@color/pink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2022년 05월 21일" />
+
+
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/img_star_dummy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="30dp"
+            android:text="@{noteData.content}"
+            android:textAppearance="@style/body"
+            android:lineHeight="24sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/iv_star"
+            tools:text="오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="58dp"
+            android:layout_marginVertical="26dp"
+            android:background="@drawable/rectangle_fill_purple_radius_11"
+            android:text="확인"
+            android:textAppearance="@style/BtnModal"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".ui.symphony.SymphonyActivity"
-            android:exported="false" />
+            android:exported="true" /> <!-- Edit Configuration을 사용하기 위해 임시로 true 로 지정 -->
         <activity
             android:name=".ui.setname.SetNameActivity"
             android:exported="true">
