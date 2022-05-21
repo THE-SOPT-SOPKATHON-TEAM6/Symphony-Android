@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="note"
+            type="String" />
+
+    </data>
+
+    <ImageView
+        android:id="@+id/iv_note"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:paddingBottom="30dp"
+        android:src="@drawable/dummy_note" />
+    <!--        app:imageUri="@{note}"/>-->
+</layout>
