@@ -17,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.postnote.PostNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.symphony.SymphonyActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.setname.SetNameActivity"
             android:exported="true">
             <intent-filter>
