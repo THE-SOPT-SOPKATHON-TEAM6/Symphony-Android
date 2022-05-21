@@ -1,12 +1,19 @@
 package org.sopt.symphony.ui.postnote
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioGroup
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.symphony.R
+import org.sopt.symphony.data.RetrofitBuilder
 import org.sopt.symphony.data.request.PostNoteRequest
+import org.sopt.symphony.data.response.PostNoteResponse
 import org.sopt.symphony.databinding.ActivityPostNoteBinding
 import org.sopt.symphony.util.DialogScoreComplete
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -73,8 +80,8 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
     private fun initBtnEvent() {
         binding.btnDone.setOnClickListener {
             // 서버 통신 시도
-            // tryPostNote()
-            showDialog()
+            tryPostNote()
+            // showDialog()
         }
     }
 
@@ -93,31 +100,30 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
             binding.etvContent.text.toString(),
             binding.tvDate.text.toString()
         )
-        // val postNoteRequest= PostNoteRequest(checkedNote,binding.etvContent.text.toString(),binding.tvDate.text.toString())
-        // val call: Call<PostNoteResponse> = RetrofitBuilder.getInstance().posttarget(postNoteRequest)
+        val call: Call<PostNoteResponse> = RetrofitBuilder.getInstance().postBoard(postNoteRequest)
 
-        /*call.enqueue(object : Callback<PostNoteResponse> {
-    override fun onResponse(
-        call: Call<targetResponse>,
-        response: Response<targetResponse>
-    ) {
-        if (response.isSuccessful) {
-            val data = response.body()?.data
-            Log.d(TAG, "onResponse_success: $data")
+        call.enqueue(object : Callback<PostNoteResponse> {
+            override fun onResponse(
+                call: Call<PostNoteResponse>,
+                response: Response<PostNoteResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    Log.d(TAG, "onResponse_success: $data")
 
-            // for 지연언니~!!
-            if (id 값이 LAST_NOTE 이면) showDialog()
-            else finish()
+                    // for 지연언니~!!
+                    if (data?.id == LAST_NOTE) showDialog()
+                    else finish()
 
-        } else{
-            Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
-        }
-    }
+                } else {
+                    Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
+                }
+            }
 
-    override fun onFailure(call: Call<targetResponse>, t: Throwable) {
-        Log.d(TAG, "onFailure: $t")
-    }
-})*/
+            override fun onFailure(call: Call<PostNoteResponse>, t: Throwable) {
+                Log.d(TAG, "onFailure: $t")
+            }
+        })
     }
 
 }
