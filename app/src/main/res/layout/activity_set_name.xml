@@ -55,9 +55,10 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="38dp"
             android:background="@drawable/rectangle_fill_grey_line_radius_8"
+            android:paddingVertical="12dp"
             android:text="@string/draw_note_kr"
             android:textAppearance="@style/head"
-            android:textColor="@color/white"
+            android:textColor="@color/text_inactive"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
