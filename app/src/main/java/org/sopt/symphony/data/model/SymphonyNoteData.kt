@@ -1,4 +1,4 @@
-package org.sopt.symphony.data
+package org.sopt.symphony.data.model
 
 data class SymphonyNoteData(
     val content: String,

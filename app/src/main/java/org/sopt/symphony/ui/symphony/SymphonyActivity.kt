@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.symphony.R
-import org.sopt.symphony.data.SymphonyNoteData
+import org.sopt.symphony.data.model.SymphonyNoteData
 import org.sopt.symphony.databinding.ActivitySymphonyBinding
 import org.sopt.symphony.ui.postnote.PostNoteActivity
 import org.sopt.symphony.ui.symphony.adapter.SymphonyAdapter

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.symphony.data.SymphonyNoteData
+import org.sopt.symphony.data.model.SymphonyNoteData
 import org.sopt.symphony.databinding.ItemNoteForSymphonyBinding
 
 class SymphonyAdapter(
