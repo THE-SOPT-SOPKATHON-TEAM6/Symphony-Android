@@ -13,7 +13,7 @@ interface SymphonyService {
     //    ): Call<SignUpResponse>
 
     // 글쓰기 post
-    @POST("/board")
+    @POST("board")
     fun postBoard(
         @Body body: PostNoteRequest
     ): Call<PostNoteResponse>
