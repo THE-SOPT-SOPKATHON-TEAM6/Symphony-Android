@@ -41,7 +41,7 @@
             android:id="@+id/tv_symphony"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/symphony_kr"
+            android:text="@string/symphony_kr_contain_space"
             android:textAppearance="@style/head_main"
             android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
