@@ -39,10 +39,9 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
                 if (response.isSuccessful) {
                     val data = response.body()?.data
                     dummyList = data?.toMutableList() ?: throw IllegalStateException()
-                    symphonyAdapter.submitList(dummyList)
-                } else {
-                    Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
-                }
+                    val tmp = refactorList(dummyList)
+                    symphonyAdapter.submitList(tmp)
+                } else Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
             }
 
             override fun onFailure(call: Call<SymphonyResponse>, t: Throwable) {
@@ -51,14 +50,38 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
         })
     }
 
+    private fun refactorList(originList: MutableList<SymphonyNoteData>): MutableList<SymphonyNoteData> {
+        var idx = 0
+        val markNote = SymphonyNoteData("-1", MARK_NOTE, "-1", "-1")
+        val emptyNote = SymphonyNoteData("-1", EMPTY_NOTE, "-1", "-1")
+        val refactorList: MutableList<SymphonyNoteData> = arrayListOf()
+
+        for (i in 0..23) {
+            if (i == 0 || i == 8 || i == 16) {
+                refactorList.add(i, markNote)
+                continue
+            } else {
+                if (idx < originList.size) {
+                    Log.d(TAG, "refactorList: ${originList[idx]} ")
+                    refactorList.add(i, originList[idx])
+                    idx += 1
+                    continue
+                } else refactorList.add(i, emptyNote)
+            }
+        }
+        return refactorList
+    }
+
     private fun initRvAdapter() {
         binding.rvSymphony.adapter =
             SymphonyAdapter(::onNoteClick).also { symphonyAdapter = it }
     }
 
     private fun onNoteClick(symphonyNoteData: SymphonyNoteData) {
-        val dialog = DialogNoteDetail(symphonyNoteData)
-        dialog.show(supportFragmentManager, this.javaClass.name)
+        if (symphonyNoteData.content != "-1") {
+            val dialog = DialogNoteDetail(symphonyNoteData)
+            dialog.show(supportFragmentManager, this.javaClass.name)
+        }
     }
 
     private fun initDrawNoteBtnClick() {
@@ -72,134 +95,10 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
         binding.tvName.text = intent.getStringExtra("name")
     }
 
-//    companion object {
-//        val dummy_list = listOf(
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//            SymphonyNoteData(
-//                "오늘 솝커톤을 했다. 좋은 팀원들을 만나 재밌게 열심히 프로젝트 한다. 일상을 주제로 해서 앱을 만들고 있다. 우리는 대상을 탈거고 인기상 운명이기도 하다",
-//                "https://user-images.githubusercontent.com/59546818/169656548-e95e16d8-88cb-4d31-a726-de7a1df711cf.png",
-//                "do",
-//                "2022-12-12"
-//            ),
-//        )
-//    }
+    companion object {
+        const val MARK_NOTE =
+            "https://user-images.githubusercontent.com/59546818/169668121-d2a84652-7a8c-4adf-8c82-b7b983b120f6.png"
+        const val EMPTY_NOTE =
+            "https://user-images.githubusercontent.com/59546818/169668122-1adaba21-4be7-477f-8967-3c13a3e17004.png"
+    }
 }
