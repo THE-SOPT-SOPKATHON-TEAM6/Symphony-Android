@@ -41,12 +41,6 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
         }
     }
 
-    // 이름 입력 버튼 누르고 intent로 넘기는 코드입니다!
-//        binding.btnNameFinish.setOnClickListener() {
-//            val intent = Intent(this, SetNameActivity::class.java)
-//            intent.getStringExtra("name")
-//        }
-
     companion object {
         val dummy_list = listOf(
             SymphonyNoteData(
