@@ -40,6 +40,18 @@
             app:layout_constraintStart_toEndOf="@id/tv_name"
             app:layout_constraintTop_toTopOf="@id/tv_name" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_symphony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_symphony"
+            app:spanCount="8"
+            tools:itemCount="24"
+            tools:listitem="@layout/item_note_for_symphony" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_draw"
             android:layout_width="match_parent"
