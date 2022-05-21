@@ -11,6 +11,9 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!--        <item name="android:windowLightStatusBar" >true</item>-->
         <!-- Customize your theme here. -->
+        <!--        <item name="android:includeFontPadding">false</item>-->
+        <!--        <item name="fontFamily">@font/noto_sans_kr</item>-->
     </style>
 </resources>
