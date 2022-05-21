@@ -1,20 +1,17 @@
 package org.sopt.symphony.util
 
 import android.app.Dialog
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import org.sopt.symphony.R
-import org.sopt.symphony.data.model.SymphonyNoteData
-import org.sopt.symphony.databinding.DialogNoteDetailBinding
+import org.sopt.symphony.databinding.DialogScoreCompleteBinding
 
-class DialogUtil(private val dialogMode: Int, private val note: SymphonyNoteData) :
+class DialogScoreComplete(private val doAfterConfirm: () -> Unit) :
     DialogFragment() {
-    private var _binding: DialogNoteDetailBinding? = null
+    private var _binding: DialogScoreCompleteBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -26,25 +23,13 @@ class DialogUtil(private val dialogMode: Int, private val note: SymphonyNoteData
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DialogNoteDetailBinding.inflate(layoutInflater)
+        _binding = DialogScoreCompleteBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        Log.d(TAG, "onViewCreated: dialog")
         setLayout(view)
-        setVisibilityDependOnDialog()
         clickConfirmListener()
-    }
-
-    private fun setVisibilityDependOnDialog() {
-        when (dialogMode) {
-            SHOW_NOTE -> {
-                binding.noteData = note // set data
-            }
-            COMPLETE_POST -> Log.d(TAG, "setVisibilityDependOnDialog: COMPLETE_POST")
-        }
     }
 
     private fun setLayout(view: View) {
@@ -57,11 +42,9 @@ class DialogUtil(private val dialogMode: Int, private val note: SymphonyNoteData
     }
 
     private fun clickConfirmListener() {
-        binding.btnConfirm.setOnClickListener { dismiss() }
-    }
-
-    companion object {
-        const val SHOW_NOTE = 0
-        const val COMPLETE_POST = 1
+        binding.btnConfirm.setOnClickListener {
+            dismiss()
+            doAfterConfirm()
+        }
     }
 }
