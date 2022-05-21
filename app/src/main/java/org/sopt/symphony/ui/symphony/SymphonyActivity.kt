@@ -1,14 +1,21 @@
 package org.sopt.symphony.ui.symphony
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.symphony.R
+import org.sopt.symphony.data.RetrofitBuilder
 import org.sopt.symphony.data.model.SymphonyNoteData
+import org.sopt.symphony.data.response.SymphonyResponse
 import org.sopt.symphony.databinding.ActivitySymphonyBinding
 import org.sopt.symphony.ui.postnote.PostNoteActivity
 import org.sopt.symphony.ui.symphony.adapter.SymphonyAdapter
 import org.sopt.symphony.util.DialogNoteDetail
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity_symphony) {
     private lateinit var symphonyAdapter: SymphonyAdapter
@@ -19,6 +26,28 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
         initRvAdapter()
         setRvItem()
         initDrawNoteBtnClick()
+        getSymphonyData()
+    }
+
+    private fun getSymphonyData() {
+        val call = RetrofitBuilder.getInstance().getNote()
+        call.enqueue(object : Callback<SymphonyResponse> {
+            override fun onResponse(
+                call: Call<SymphonyResponse>,
+                response: Response<SymphonyResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+                    Log.d(TAG, "onResponse_success: $data")
+                } else {
+                    Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
+                }
+            }
+
+            override fun onFailure(call: Call<SymphonyResponse>, t: Throwable) {
+                Log.d(TAG, "onFailure: $t")
+            }
+        })
     }
 
     private fun setRvItem() {
