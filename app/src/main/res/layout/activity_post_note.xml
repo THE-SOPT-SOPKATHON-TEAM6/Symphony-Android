@@ -19,12 +19,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="56dp"
-            android:textColor="@color/white"
             android:text="@string/today_date_kr"
             android:textAppearance="@style/head_sub"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_today_note"
@@ -32,21 +32,21 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="16dp"
-            android:textColor="@color/pink"
+            android:text="@string/today_note_kr"
             android:textAppearance="@style/head"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/today_note_kr"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date" />
 
         <RadioGroup
             android:id="@+id/radio_group_note"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginTop="32dp"
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_today_note">
@@ -178,24 +178,24 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="38dp"
-            android:textColor="@color/pink"
-            android:textAppearance="@style/head"
             android:text="@string/today_content_kr"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textAppearance="@style/head"
+            android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_note_text" />
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_note_content"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="17dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="17dp"
             android:background="@drawable/rectangle_radius_16"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_done"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_today_content"
-            app:layout_constraintBottom_toTopOf="@id/btn_done">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_today_content">
 
             <EditText
                 android:id="@+id/etv_content"
@@ -206,6 +206,7 @@
                 android:gravity="top"
                 android:textAppearance="@style/body"
                 android:textColor="@color/white"
+                android:theme="@style/WhiteEditTextStyle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -217,17 +218,17 @@
             android:id="@+id/btn_done"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:text="@string/draw_note_kr"
-            android:textColor="@color/white"
-            android:textAppearance="@style/head"
-            android:layout_marginTop="30dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/rectangle_fill_purple_radius_11"
-            app:layout_constraintTop_toBottomOf="@id/layout_note_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/draw_note_kr"
+            android:textAppearance="@style/head"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_note_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
