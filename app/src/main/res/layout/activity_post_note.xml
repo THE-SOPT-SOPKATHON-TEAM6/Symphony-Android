@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         tools:context=".ui.postnote.PostNoteActivity">
 
         <TextView
@@ -17,8 +18,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="56dp"
+            android:textColor="@color/white"
             android:text="2022년 5월 21일"
+            android:textAppearance="@style/head_sub"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -28,7 +31,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/pink"
+            android:textAppearance="@style/head"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_date"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,11 +42,12 @@
         <RadioGroup
             android:id="@+id/radio_group_note"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
             android:orientation="horizontal"
-            android:layout_marginTop="29dp"
-            app:layout_constraintStart_toStartOf="@id/tv_today_note"
-            app:layout_constraintEnd_toEndOf="@id/tv_today_note"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_today_note">
 
             <RadioButton
@@ -86,16 +92,92 @@
 
         </RadioGroup>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_note_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radio_group_note">
+
+            <TextView
+                android:id="@+id/tv_doe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도"
+                android:textAppearance="@style/head_sub"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_mi"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_mi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미"
+                android:textAppearance="@style/head_sub"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_sol"
+                app:layout_constraintStart_toEndOf="@id/tv_doe"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="솔"
+                android:textAppearance="@style/head_sub"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_si"
+                app:layout_constraintStart_toEndOf="@id/tv_mi"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_si"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시"
+                android:textAppearance="@style/head_sub"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_rae"
+                app:layout_constraintStart_toEndOf="@id/tv_sol"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rae"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="레"
+                android:textAppearance="@style/head_sub"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_si"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/tv_today_content"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="38dp"
+            android:textColor="@color/pink"
+            android:textAppearance="@style/head"
             android:text="오늘의 감정을 가사로 적어보세요."
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/radio_group_note" />
+            app:layout_constraintTop_toBottomOf="@id/layout_note_text" />
         
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_note_content"
@@ -103,8 +185,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="17dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="35dp"
-            android:background="@color/teal_200"
+            android:background="@drawable/rectangle_radius_16"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_today_content"
@@ -114,22 +195,28 @@
                 android:id="@+id/etv_content"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@color/white"
-                android:layout_marginVertical="31dp"
-                android:layout_marginHorizontal="22dp"
+                android:textColor="@color/white"
+                android:gravity="top"
+                android:background="@null"
+                android:textAppearance="@style/body"
+                android:layout_margin="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_done"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:text="음표 그리기 완료"
+            android:text="음표 그리기"
+            android:textColor="@color/white"
+            android:textAppearance="@style/head"
+            android:layout_marginTop="30dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rectangle_fill_purple_radius_11"
             app:layout_constraintTop_toBottomOf="@id/layout_note_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
