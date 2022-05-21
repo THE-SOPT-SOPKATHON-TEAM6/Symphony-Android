@@ -10,4 +10,5 @@
     <string name="today_note_kr">하루를 음계로 표현하자면,</string>
     <string name="today_content_kr">오늘의 감정을 가사로 적어보세요.</string>
     <string name="today_date_kr">2022년 5월 21일</string>
+    <string name="date_formant_kr">yyyy년 MM월 dd일</string>
 </resources>

@@ -1,22 +1,24 @@
 package org.sopt.symphony.ui.postnote
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.RadioGroup
-import android.widget.Toast
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.symphony.R
-import org.sopt.symphony.data.RetrofitBuilder
-import org.sopt.symphony.data.request.PostNoteRequest
-import org.sopt.symphony.data.response.PostNoteResponse
 import org.sopt.symphony.databinding.ActivityPostNoteBinding
-import retrofit2.Call
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity_post_note) {
 
-    var checkedNote = "" // 선택된 음표
+    var checkedNote = ""
+
+    companion object{
+        const val CHECK_NOTE_DOE = "note1"
+        const val CHECK_NOTE_MI = "note2"
+        const val CHECK_NOTE_SOL = "note3"
+        const val CHECK_NOTE_SI = "note4"
+        const val CHECK_NOTE_RAE = "note5"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,7 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
     // 현재 날짜 가져오기
     private fun setCurrentDate() {
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일")
+        val formatter = DateTimeFormatter.ofPattern(getString(R.string.date_formant_kr))
         val formatted = current.format(formatter)
 
         binding.tvDate.text = formatted
@@ -41,22 +43,22 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
             override fun onCheckedChanged(radioGroup: RadioGroup?, checkedId: Int) {
                 when (checkedId) {
                     R.id.radio_do -> {
-                        checkedNote = "도"
+                        checkedNote = CHECK_NOTE_DOE
                     }
                     R.id.radio_mi -> {
-                        checkedNote = "미"
+                        checkedNote = CHECK_NOTE_MI
                     }
                     R.id.radio_sol -> {
-                        checkedNote = "솔"
+                        checkedNote = CHECK_NOTE_SOL
                     }
                     R.id.radio_si -> {
-                        checkedNote = "시"
+                        checkedNote = CHECK_NOTE_SI
                     }
                     R.id.radio_rae -> {
-                        checkedNote = "레"
+                        checkedNote = CHECK_NOTE_RAE
                     }
                     else -> {
-                        checkedNote = "도"
+                        checkedNote = CHECK_NOTE_DOE
                     }
                 }
             }
@@ -64,6 +66,8 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
         })
     }
 
+
+    // 버튼 이벤트 등록
     private fun initBtnEvent(){
         binding.btnDone.setOnClickListener {
             // 서버 통신 시도
@@ -73,7 +77,7 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
     }
 
     private fun tryPostNote() {
-        val postNoteRequest= PostNoteRequest(checkedNote,binding.etvContent.text.toString(),binding.tvDate.text.toString())
+        // val postNoteRequest= PostNoteRequest(checkedNote,binding.etvContent.text.toString(),binding.tvDate.text.toString())
         // val call: Call<PostNoteResponse> = RetrofitBuilder.getInstance().posttarget(postNoteRequest)
 
         /*call.enqueue(object : Callback<PostNoteResponse> {

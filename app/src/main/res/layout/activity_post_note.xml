@@ -20,11 +20,11 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="56dp"
             android:textColor="@color/white"
-            android:text="@string/today_date_kr"
             android:textAppearance="@style/head_sub"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/today_date_kr"/>
 
         <TextView
             android:id="@+id/tv_today_note"
@@ -34,10 +34,11 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/pink"
             android:textAppearance="@style/head"
+            android:text="@string/today_note_kr"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_date"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/today_note_kr"/>
+            />
 
         <RadioGroup
             android:id="@+id/radio_group_note"
