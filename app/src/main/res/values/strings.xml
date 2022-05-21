@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Symphony</string>
+    <string name="at_may_kr_contain_space">5월의&#160;</string>
+    <string name="symphony_kr_contain_space">&#160;교향곡</string>
 </resources>
