@@ -22,7 +22,7 @@ class SetNameActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this@SetNameActivity, SymphonyActivity::class.java)
                 intent.putExtra("name", binding.etName.text.toString())
-                setResult(Activity.RESULT_OK, intent)
+                startActivity(intent)
                 finish()
             }
         }
