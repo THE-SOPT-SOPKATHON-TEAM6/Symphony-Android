@@ -81,7 +81,6 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
         binding.btnDone.setOnClickListener {
             // 서버 통신 시도
             tryPostNote()
-            // showDialog()
         }
     }
 
@@ -109,19 +108,19 @@ class PostNoteActivity : BaseActivity<ActivityPostNoteBinding>(R.layout.activity
             ) {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
-                    Log.d(TAG, "onResponse_success: $data")
+                    //Log.d(TAG, "onResponse_success: $data")
 
-                    // for 지연언니~!!
+                    // 21번째 글이면 다이얼로그 보여주기
                     if (data?.id == LAST_NOTE) showDialog()
                     else finish()
 
                 } else {
-                    Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
+                    //Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
                 }
             }
 
             override fun onFailure(call: Call<PostNoteResponse>, t: Throwable) {
-                Log.d(TAG, "onFailure: $t")
+                //Log.d(TAG, "onFailure: $t")
             }
         })
     }

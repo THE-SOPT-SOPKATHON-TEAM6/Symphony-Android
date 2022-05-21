@@ -46,8 +46,8 @@
             android:layout_height="56dp"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="32dp"
-            android:gravity="center"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/layout_note_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_today_note">
@@ -56,46 +56,60 @@
                 android:id="@+id/radio_do"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_1"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_mi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_2"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_sol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_3"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_si"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_4"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/radio_rae"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/btn_note_5"
+                android:layout_marginStart="8dp"
+                android:button="@null"
                 android:checked="false"
-                android:text="" />
+                android:gravity="center"
+                android:text=""
+                app:buttonCompat="@null"/>
 
         </RadioGroup>
 
