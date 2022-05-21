@@ -9,40 +9,52 @@
         android:background="@color/background"
         tools:context=".ui.setname.SetNameActivity">
 
-        <TextView
-            style="@style/head_sub"
+        <ImageView
+            android:id="@+id/iv_write_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="288dp"
+            android:layout_marginHorizontal="129dp"
+            android:layout_marginTop="118dp"
+            android:src="@drawable/ic_img_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_write_intro"
+            style="@style/head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="282dp"
             android:text="@string/intro_kr"
             android:textColor="@color/pink"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            style="@style/head"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/iv_sympony"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="303dp"
-            android:letterSpacing="0.53"
-            android:text="@string/symphony_kr"
-            android:textColor="@color/pink"
-            android:textSize="45dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="21dp"
+            android:src="@drawable/img_sympony"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_write_intro"
+            app:layout_constraintBottom_toTopOf="@id/et_name" />
 
         <EditText
             android:id="@+id/et_name"
             style="@style/head"
             android:layout_width="match_parent"
             android:layout_height="51dp"
+            android:layout_marginHorizontal="40dp"
             android:layout_marginTop="371dp"
             android:background="@drawable/rectangle_fill_grey_line_radius_8"
             android:hint="@string/write_name_kr"
-            android:layout_marginHorizontal="40dp"
-            android:paddingStart="14dp"
+            android:paddingStart="12dp"
             android:textColor="@color/white"
             android:textColorHint="@color/text_inactive"
             android:theme="@style/WhiteEditTextStyle"
