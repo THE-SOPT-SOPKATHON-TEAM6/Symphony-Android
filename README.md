@@ -4,6 +4,16 @@
 ### 서비스명 : 심포니 (symphony)
 ### 서비스 한 줄 소개 : 일상을 '음표'로 기록하고 '악보'로 만나보세요
 
+![12](https://user-images.githubusercontent.com/59546818/169673078-4162cac7-4584-4ea2-9dc0-fde301ced626.png)
+![13](https://user-images.githubusercontent.com/59546818/169673082-a96ec6bd-b5c4-42fc-81f4-360ec66891d4.png)
+![14](https://user-images.githubusercontent.com/59546818/169673085-90aba294-9754-4db1-9903-73091235896a.png)
+![15](https://user-images.githubusercontent.com/59546818/169673087-bdcb3bf5-dae3-4330-bbfa-4ac891592424.png)
+![16](https://user-images.githubusercontent.com/59546818/169673088-1c5612bb-428c-4f6e-9a58-aa50631fbaeb.png)
+![17](https://user-images.githubusercontent.com/59546818/169673089-cf3e96ed-3450-4e86-ac34-602121ad0d50.png)
+![18](https://user-images.githubusercontent.com/59546818/169673090-bfbc01a9-6a4b-4693-869e-2506a779b405.png)
+![19](https://user-images.githubusercontent.com/59546818/169673091-a3f548b7-7b1b-42cc-a392-c4e9c61f6cb7.png)
+
+
 #  :two: 개발 담당 부분
 #### [최유리](https://github.com/uxri) : 작곡자 등록 뷰 (SetNameActivity)
 #### [김효림](https://github.com/KxxHyoRim) : 악보 뷰 (SymphonyActivity)
