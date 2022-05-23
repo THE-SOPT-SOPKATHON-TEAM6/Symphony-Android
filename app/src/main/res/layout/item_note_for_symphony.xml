@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -12,8 +14,8 @@
     <ImageView
         android:id="@+id/iv_note"
         android:layout_width="40dp"
-        android:layout_height="100dp"
-        android:paddingBottom="30dp"
-        android:src="@drawable/dummy_note" />
-    <!--        app:imageUri="@{note}"/>-->
+        android:layout_height="120dp"
+        android:paddingBottom="25dp"
+        app:imageUrl="@{note}"
+        tools:src="@drawable/img_mark_for_symphony" />
 </layout>

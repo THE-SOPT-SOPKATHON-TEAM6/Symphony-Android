@@ -8,6 +8,10 @@
         <variable
             name="noteData"
             type="org.sopt.symphony.data.model.SymphonyNoteData" />
+
+        <variable
+            name="starImage"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,10 +35,10 @@
 
         <ImageView
             android:id="@+id/iv_star"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/img_star_dummy"
+            app:imageUrl="@{starImage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_date" />

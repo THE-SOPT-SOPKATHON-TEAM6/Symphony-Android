@@ -27,7 +27,7 @@ class SymphonyAdapter(
         private val binding: ItemNoteForSymphonyBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(noteData: SymphonyNoteData, onNoteClick: (SymphonyNoteData) -> Unit) {
-            binding.note = noteData.scoreImage
+            binding.note = noteData.scoreImg
             binding.root.setOnClickListener { onNoteClick(noteData) }
         }
     }

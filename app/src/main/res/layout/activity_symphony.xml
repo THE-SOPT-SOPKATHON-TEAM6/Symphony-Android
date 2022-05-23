@@ -17,10 +17,10 @@
             android:id="@+id/iv_deco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_deco"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="47dp"
-            android:layout_marginHorizontal="32dp"/>
+            android:src="@drawable/ic_deco"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_at_may"
@@ -62,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="62dp"
+            android:elevation="5dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +70,37 @@
             app:spanCount="8"
             tools:itemCount="24"
             tools:listitem="@layout/item_note_for_symphony" />
+
+        <ImageView
+            android:layout_width="315dp"
+            android:layout_height="52.3dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/img_5_line"
+            app:layout_constraintEnd_toEndOf="@id/rv_symphony"
+            app:layout_constraintStart_toStartOf="@id/rv_symphony"
+            app:layout_constraintTop_toTopOf="@id/rv_symphony"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="315dp"
+            android:layout_height="52.3dp"
+            android:layout_marginTop="135dp"
+            android:src="@drawable/img_5_line"
+            app:layout_constraintEnd_toEndOf="@id/rv_symphony"
+            app:layout_constraintStart_toStartOf="@id/rv_symphony"
+            app:layout_constraintTop_toTopOf="@id/rv_symphony"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="315dp"
+            android:layout_height="52.3dp"
+            android:layout_marginTop="255dp"
+            android:src="@drawable/img_5_line"
+            app:layout_constraintEnd_toEndOf="@id/rv_symphony"
+            app:layout_constraintStart_toStartOf="@id/rv_symphony"
+            app:layout_constraintTop_toTopOf="@id/rv_symphony"
+            tools:ignore="ContentDescription" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_draw"
