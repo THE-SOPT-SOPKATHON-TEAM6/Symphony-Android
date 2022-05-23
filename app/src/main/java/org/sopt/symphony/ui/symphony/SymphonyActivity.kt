@@ -43,9 +43,7 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
                 if (response.isSuccessful) {
                     val data = response.body()?.data
                     dummyList = data?.toMutableList() ?: throw IllegalStateException()
-                    Log.d(TAG, "onResponse: $dummyList")
-                    val tmp = refactorList(dummyList)
-                    symphonyAdapter.submitList(tmp)
+                    symphonyAdapter.submitList(refactorList(dummyList))
                 } else Log.d(TAG, "onResponse_not_success: ${response.errorBody()?.string()}")
             }
 
@@ -57,22 +55,19 @@ class SymphonyActivity : BaseActivity<ActivitySymphonyBinding>(R.layout.activity
 
     private fun refactorList(originList: MutableList<SymphonyNoteData>): MutableList<SymphonyNoteData> {
         var idx = 0
-        val markNote = SymphonyNoteData("-1", MARK_NOTE, "-1", "-1")
-        val emptyNote = SymphonyNoteData("-1", EMPTY_NOTE, "-1", "-1")
+        val markNote = SymphonyNoteData(scoreImg = MARK_NOTE)
+        val emptyNote = SymphonyNoteData(scoreImg = EMPTY_NOTE)
         val refactorList: MutableList<SymphonyNoteData> = arrayListOf()
 
         for (i in 0..23) {
             if (i == 0 || i == 8 || i == 16) {
                 refactorList.add(i, markNote)
-                continue
-            } else {
-                if (idx < originList.size) {
-                    Log.d(TAG, "refactorList: ${originList[idx]} ")
-                    refactorList.add(i, originList[idx])
-                    idx += 1
-                    continue
-                } else refactorList.add(i, emptyNote)
-            }
+            } else if (idx < originList.size) {
+                Log.d(TAG, "refactorList: ${originList[idx]} ")
+                refactorList.add(i, originList[idx])
+                idx += 1
+            } else refactorList.add(i, emptyNote)
+            continue
         }
         return refactorList
     }
