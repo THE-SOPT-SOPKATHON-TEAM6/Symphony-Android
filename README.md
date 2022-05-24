@@ -4,14 +4,16 @@
 ### 서비스명 : 심포니 (symphony)
 ### 서비스 한 줄 소개 : 일상을 '음표'로 기록하고 '악보'로 만나보세요
 
-![12](https://user-images.githubusercontent.com/59546818/169673078-4162cac7-4584-4ea2-9dc0-fde301ced626.png)
-![13](https://user-images.githubusercontent.com/59546818/169673082-a96ec6bd-b5c4-42fc-81f4-360ec66891d4.png)
-![14](https://user-images.githubusercontent.com/59546818/169673085-90aba294-9754-4db1-9903-73091235896a.png)
-![15](https://user-images.githubusercontent.com/59546818/169673087-bdcb3bf5-dae3-4330-bbfa-4ac891592424.png)
-![16](https://user-images.githubusercontent.com/59546818/169673088-1c5612bb-428c-4f6e-9a58-aa50631fbaeb.png)
-![17](https://user-images.githubusercontent.com/59546818/169673089-cf3e96ed-3450-4e86-ac34-602121ad0d50.png)
-![18](https://user-images.githubusercontent.com/59546818/169673090-bfbc01a9-6a4b-4693-869e-2506a779b405.png)
-![19](https://user-images.githubusercontent.com/59546818/169673091-a3f548b7-7b1b-42cc-a392-c4e9c61f6cb7.png)
+![12](https://user-images.githubusercontent.com/59546818/170047389-2ace2ec6-fdfd-410f-ab68-6398898ae9ec.png)
+![13](https://user-images.githubusercontent.com/59546818/170047392-b23dee4e-f5e6-4cd8-96e1-0245b89deb65.png)
+![14](https://user-images.githubusercontent.com/59546818/170047404-c59ff423-fcfc-4d6a-8751-b8e4eeeb76e5.png)
+![15](https://user-images.githubusercontent.com/59546818/170047407-53aee703-8964-44e3-8c71-cf5dbc66ca8e.png)
+![16](https://user-images.githubusercontent.com/59546818/170047409-3357ac82-7c72-4945-b71f-8ec79a1bbc62.png)
+![17](https://user-images.githubusercontent.com/59546818/170047412-592dc49a-0a3b-4956-9133-d7aa54548dcd.png)
+![18](https://user-images.githubusercontent.com/59546818/170047416-c50d54d9-f255-4e43-94dd-540e4d7ac85d.png)
+![19](https://user-images.githubusercontent.com/59546818/170047421-a4b082f5-29ee-4a5d-8c3a-daea1a72239b.png)
+![20](https://user-images.githubusercontent.com/59546818/170047372-ed37e04e-de84-4213-a9d3-1e1e116698ed.png)
+![21](https://user-images.githubusercontent.com/59546818/170047384-e1d6b461-7461-4f81-9960-4a1f0edc49b8.png)
 
 
 #  :two: 개발 담당 부분
